@@ -31,10 +31,13 @@ public class ExecutaCrud {
 				case 1:
 					System.out.println("Cadastrando produtos...");
 					cadastrarProdutos();
+					break;
 				case 2:
-					atualizarProduto(1);
+					atualizarProduto(1l);
+					break;
 				case 3:
-					excluirProduto(2);
+					excluirProduto(2l);
+					break;
 				}	
 			}
 		}
@@ -61,11 +64,24 @@ public class ExecutaCrud {
 		em.close();
 	}
 	
-	private static void atualizarProduto(int id) {
-		// TODO Auto-generated method stub
+	private static void atualizarProduto(Long id) {
+		System.out.println("Atualizando produto de ID " + id);
+		
+		EntityManager em = JPAUtil.getEntityManager();
+		ProdutoDao produtoDao = new ProdutoDao(em);
+		
+		Produto produto = produtoDao.findById(id);
+		produtoDao.update(produto);
+		produto.setNome("Pendrive Kingston");
+		produto.setDescricao("DataTraveler USB 3.0 64GB");
+		produto.setQuantidade(489);
+		em.getTransaction().begin();
+		produtoDao.create(produto);
+		em.getTransaction().commit();
+		em.close();
 	}
 	
-	private static void excluirProduto(int id) {
+	private static void excluirProduto(Long id) {
 		// TODO Auto-generated method stub	
 	}
 
