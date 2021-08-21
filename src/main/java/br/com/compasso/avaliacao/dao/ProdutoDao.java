@@ -49,6 +49,8 @@ public class ProdutoDao {
 		produto.setDataAlteracao(LocalDateTime.now());
 		try {
 			this.entityM.merge(produto);
+			this.entityM.persist(produto);
+			System.out.println("Produto de ID " + produto.getId() + " atualizado com sucesso!");
 		} catch (Exception e) {
 			e.fillInStackTrace();
 			System.out.println("Não foi possivel atualizar o produto\nErro:"
@@ -61,9 +63,10 @@ public class ProdutoDao {
 		try {
 			produto = entityM.merge(produto);
 			this.entityM.remove(produto);
+			System.out.println("Produto de ID " + produto.getId() + " removido com sucesso!");
 		} catch (Exception e) {
 			e.fillInStackTrace();
-			System.out.println("Não foi possivel atualizar o produto\nErro:"
+			System.out.println("Não foi possivel remover o produto\nErro:"
 					+ e.getMessage());
 		}
 	}
