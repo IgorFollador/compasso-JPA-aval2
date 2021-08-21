@@ -1,6 +1,6 @@
 package br.com.compasso.avaliacao.dao;
 
-import java.time.LocalDate;
+import java.time.LocalDateTime;
 import java.util.List;
 
 import javax.persistence.EntityManager;
@@ -8,6 +8,7 @@ import javax.persistence.EntityManager;
 import br.com.compasso.avaliacao.modelo.Produto;
 
 public class ProdutoDao {
+	
 	private EntityManager entityM;
 
 	public ProdutoDao(EntityManager em) {
@@ -17,6 +18,9 @@ public class ProdutoDao {
 	public void create(Produto produto) {
 		try {
 			this.entityM.persist(produto);
+			System.out.println("\nProduto " + produto.getNome() 
+			+ " com ID: " + produto.getId() + " foi cadastrado com sucesso!\n");
+			
 		} catch (Exception e) {
 			e.fillInStackTrace();
 			System.out.println("Não foi possivel cadastrar o produto\nErro:"
@@ -42,7 +46,7 @@ public class ProdutoDao {
 	}
 	
 	public void update(Produto produto) {
-		produto.setDataAlteracao(LocalDate.now());
+		produto.setDataAlteracao(LocalDateTime.now());
 		try {
 			this.entityM.merge(produto);
 		} catch (Exception e) {
