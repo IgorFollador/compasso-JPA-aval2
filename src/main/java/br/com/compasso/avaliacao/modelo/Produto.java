@@ -23,9 +23,6 @@ public class Produto {
 	private LocalDateTime dataCriacao = LocalDateTime.now();
 	private LocalDateTime dataAlteracao = LocalDateTime.now();
 
-	public Produto() {
-	}
-	
 	public Produto(String nome, String descricao, 
 			Integer quantidade, BigDecimal preco) {
 		super();
