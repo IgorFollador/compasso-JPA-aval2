@@ -9,14 +9,15 @@ import br.com.compasso.avaliacao.dao.ProdutoDao;
 import br.com.compasso.avaliacao.modelo.Produto;
 import br.com.compasso.avaliacao.util.JPAUtil;
 
-//EXECUÇÃO DO PRIMEIRO EXERCÍCIO DA AVALIAÇÃO DA SPRINT II
+//EXECUÇÃO DO PRIMEIRO EXERCÍCIO DA AVALIAÇÃO DA SPRINT II\
+//Cadastro de produtos
 public class ExecutaCrud {
 	public static void main(String[] args) {
 		try (Scanner input = new Scanner(System.in)) {
 			int opt;
 			
 			while(true) {
-				System.out.print("Digite a opção desejada:\n"
+				System.out.print("\nDigite a opção desejada:\n"
 						+ "1 - Cadastrar três produtos\n"
 						+ "2 - Atualizar o primeiro produto\n"
 						+ "3 - Remover o segundo produto\n"

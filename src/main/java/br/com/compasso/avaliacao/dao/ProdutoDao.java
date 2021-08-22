@@ -19,7 +19,7 @@ public class ProdutoDao {
 		try {
 			this.entityM.persist(produto);
 			System.out.println("\nProduto " + produto.getNome() 
-			+ " com ID: " + produto.getId() + " foi cadastrado com sucesso!\n");
+			+ " com ID: " + produto.getId() + " foi cadastrado com sucesso!");
 			
 		} catch (Exception e) {
 			e.fillInStackTrace();

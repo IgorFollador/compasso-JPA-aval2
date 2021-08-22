@@ -10,6 +10,8 @@ import br.com.compasso.avaliacao.dao.FilmeDao;
 import br.com.compasso.avaliacao.modelo.Filme;
 import br.com.compasso.avaliacao.util.JPAUtil;
 
+//EXECUÇÃO DO SEGUNDO EXERCÍCIO DA AVALIAÇÃO DA SPRINT II
+//Filmes e páginas
 public class ExecutaFilmesEPaginas {
 	public static void main(String[] args) {
 		try (Scanner input = new Scanner(System.in)) {
