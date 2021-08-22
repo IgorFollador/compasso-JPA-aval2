@@ -22,7 +22,7 @@ public class ExecutaFilmesEPaginas {
 			
 			System.out.print("Selecione uma opção:\n"
 					+ "1 - Realizar Busca\n"
-					+ "2 - Cadastrar livros(execute na primeira vez)\n-> ");
+					+ "2 - Cadastrar Filmes(execute na primeira vez)\n-> ");
 			opt = input.nextInt();
 			
 			if(opt==2) cadastraFilmes();
