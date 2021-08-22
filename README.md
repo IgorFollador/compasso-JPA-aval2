@@ -18,8 +18,9 @@ As configurações do Hibernate para o MySQL estão localizadas em `~/JPA_avalia
 ##### Possuindo as configurações de porta, usuário e senha abaixo:
 
 ```xml
-<property name="javax.persistence.jdbc.driver" value="com.mysql.jdbc.Driver"/>
-            <property name="javax.persistence.jdbc.url" value="jdbc:mysql://localhost:3306/banco_igorf?createDatabaseIfNotExist=true"/>
+            <property name="javax.persistence.jdbc.driver" value="com.mysql.jdbc.Driver"/>
+            <property name="javax.persistence.jdbc.url" 
+                      value="jdbc:mysql://localhost:3306/banco_igorf?createDatabaseIfNotExist=true"/>
             <property name="javax.persistence.jdbc.user" value="root"/>
             <property name="javax.persistence.jdbc.password" value="root"/>
 
@@ -30,6 +31,7 @@ As configurações do Hibernate para o MySQL estão localizadas em `~/JPA_avalia
 ##### OBS:
 
 Este é um projeto Maven, no qual foi utilizada apenas linguagem Java e o SGBD MySQL.
+O banco de dados é gerado automaticamente ao executar as classes.
 
 - Nome do banco `banco_igorf`;
 - Usuário padrão `root`;
