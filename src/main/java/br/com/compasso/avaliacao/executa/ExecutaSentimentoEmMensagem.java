@@ -7,7 +7,7 @@ public class ExecutaSentimentoEmMensagem {
 	public static void main(String[] args) {
 		try (Scanner input = new Scanner(System.in)) {
 			while(true) {
-				System.out.println("Ensira sua mensagem:");
+				System.out.print("Entrada: ");
 				String msg = input.nextLine();
 				String feliz = ":-)", triste = ":-(";
 				int nFeliz = 0, nTriste = 0;
@@ -15,27 +15,17 @@ public class ExecutaSentimentoEmMensagem {
 				String [] arrayString = msg.split(" ");
 				
 				for(int i=0;i<arrayString.length;i++){
-					
-					if(arrayString[i].equals(feliz)){
+					if(arrayString[i].contains(feliz)){
 						nFeliz++;
-					} else if(arrayString[i].equals(triste)){
+					} 
+					if(arrayString[i].contains(triste)){
 						nTriste++;
 					}
-					
 				}
-//				while(msg.contains(feliz)) {
-//					nFeliz++;
-//					msg = msg.replaceFirst(feliz, " ");
-//				}
-//				
-//				while(msg.contains(triste)) {
-//					nTriste++;
-//					msg = msg.replaceFirst(triste, " ");
-//				}
-				
+				System.out.print("Saída: ");
 				if(nFeliz > nTriste) System.out.println("divertido");
 				else if(nFeliz < nTriste) System.out.println("chateado");
-				else System.out.println("neutro\n-------------------------------");
+				else System.out.println("neutro");
 			}
 		}
 	}
